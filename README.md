@@ -14,4 +14,5 @@ Useful Resources:
 -----------------
 
 * [Create React App](https://github.com/facebookincubator/create-react-app)
+    * [React.JS Website](https://reactjs.org/)
 * [Handlebars](http://handlebarsjs.com/)
