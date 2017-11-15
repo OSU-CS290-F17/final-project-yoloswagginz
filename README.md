@@ -1,7 +1,10 @@
 # \#Y010$W@G1N$
-How do I edit markdown again?
+
+![Whiteboard from first meeting](https://scontent-sea1-1.xx.fbcdn.net/v/t35.0-12/s2048x2048/23601041_358993677895411_1844858243_o.jpg?oh=031780a1318c817282b41899e5883457&oe=5A0D8379 "Whiteboard from first meeting")
 
 ### **== This website will be a Reddit/Facebook hybrid ==**
+
+---
 
 ## Things we need to get done:
 
@@ -26,3 +29,28 @@ How do I edit markdown again?
 * [Create React App](https://github.com/facebookincubator/create-react-app)
   * [React.JS Website](https://reactjs.org/)
 * [Handlebars](http://handlebarsjs.com/)
+
+---
+
+## HTML List
+
+* Please get proper classes and IDs done
+
+#### **Button:**
+
+* Username
+* Like
+* Button
+* Add a post
+
+#### **Hidden Window:**
+
+* Change username
+* Add a post
+* Give a comment
+
+#### **Original Post:**
+
+* 2 posts
+* 2 comments for each post
+* 3 likes for each post
