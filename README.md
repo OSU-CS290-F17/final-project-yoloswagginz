@@ -40,7 +40,7 @@
 
 * Username
 * Like
-* Button
+* Comments
 * Add a post
 
 #### **Hidden Window:**
