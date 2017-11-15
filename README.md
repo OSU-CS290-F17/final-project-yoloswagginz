@@ -4,6 +4,11 @@
 
 ### **== This website will be a Reddit/Facebook hybrid ==**
 
+# **[Please check this out if you use VS Code](https://code.visualstudio.com/blogs/2017/11/15/live-share?source=techstories.org)**
+
+## [How to merge branches](https://stackoverflow.com/questions/5601931/best-and-safest-way-to-merge-a-git-branch-into-master)
+#### _**Please merge into development branch first to check for conflicts**_
+
 ---
 
 ## Things we need to get done:
