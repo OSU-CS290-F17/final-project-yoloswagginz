@@ -13,12 +13,12 @@ How do I edit markdown again?
 
 ## Deadlines:
 
-* _**Thanksgiving**_ - Set up basic layout for website posts
+* _**November 23, 2017**_ - Set up basic layout for website posts
   * Display pictures
   * Display text
-* Display Username
+* _**TBD**_ - Username Button (with Dynamic Name Changes depending on user logged in)
 * _**November 30, 2017**_ - Get basic JS working
-* _**TBD**_ - Login system
+* _**TBD**_ - Implement Random Usernames
 * _**TBD**_ - Comment System
 
 ## Useful Resources:
