@@ -1,0 +1,65 @@
+body {
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+
+
+/* --------------------------------------- */
+
+
+
+header {
+	border-bottom: 1px solid black;
+}
+
+#site-title {
+	font-size: 80px;
+}
+
+#site-slogan {
+
+}
+
+
+
+/* --------------------------------------- */
+
+
+
+#content {
+	border: 1px solid black;
+}
+
+#posts {
+	border: 1px solid blue;
+}
+
+.post {
+	border: 1px solid pink;
+}
+
+.content-container {
+	border: 1px solid purple;
+}
+
+.button-container {
+	border: 1px solid green;
+}
+
+.comment-container {
+	border: 1px solid green;
+	height: auto;
+}
+
+.comment {
+	border: 1px solid orange;
+}
