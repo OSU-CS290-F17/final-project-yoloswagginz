@@ -13,8 +13,8 @@
 	<header>
 		<nav>
 		<h3 id="site-title">FaceIT</h3>
-		<h4 id= "site-slogan">the unfriendly social platorm.</h4>
-		<button class ="button">username</button>
+		<h4 id= "site-slogan">the unfriendly social platform.</h4>
+		<button class ="button" id="username-button">username</button>
 		</nav>
 	</header>
 
@@ -67,7 +67,21 @@
 
 	<div id="popup-backdrop" class="masked"></div>
 	<div id="popup-container" class="masked">
-		<label for=""></label>
+		<div class="popup-header">
+			<h2>Create A New Post</h2>
+		</div>
+
+		<div class="post-title-container">
+			<h4>Post Title</h4>
+			<label for="post-title"></label>
+			<input type="text" id= "input-post-title" value="Post Title">
+		</div>
+
+		<div class="post-content-container">
+			<h4>Post Content</h4>
+			<label for="post-content"></label>
+			<input type="text" id= "input-post-content" value="Post Content">
+		</div>
 
 	</div>
 
