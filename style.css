@@ -19,20 +19,21 @@ a:hover {
 
 
 header {
-	border-bottom: 1px solid black;
+	height: 115px;
 	background-color: #6effac;
 }
 
 #site-title {
-	margin: 0;
+	margin-top: -10px;
+	margin-left: 10px;
 	font-size: 80px;
 	color: white;
 	text-shadow: -1px 0 purple, 0 1px purple, 1px 0 purple, 0 -1px purple;
 }
 
 #site-slogan {
-	margin-top: -15px;
-	margin-left: 25px;
+	margin-top: -95px;
+	margin-left: 40px;
 	color: white;
 	text-shadow: -1px 0 purple, 0 1px purple, 1px 0 purple, 0 -1px purple;
 }
@@ -43,12 +44,15 @@ header {
 
 
 
+
 #content {
-	border: 1px solid black;
+	margin-top: ;
+	display: flex;
+	justify-content: center;
 }
 
 #posts {
-	border: 1px solid blue;
+	width: 70%;
 }
 
 .post {
@@ -56,21 +60,26 @@ header {
 }
 
 .content-container {
-	border: 1px solid purple;
+
 }
 
 .button-container {
-	border: 1px solid green;
+
 }
 
 .comment-container {
-	border: 1px solid green;
 	height: auto;
 }
 
 .comment {
-	border: 1px solid orange;
+
 }
+
+
+
+/* --------------------------------------- */
+
+
 
 .button {
 	background-color: #65dcb4;
@@ -79,4 +88,20 @@ header {
 
 .button:hover {
 	background-color: #5ccb8b;
+}
+
+.header-button {
+	font-size: 16px;
+	color: white;
+	text-shadow: -1px 0 purple, 0 1px purple, 1px 0 purple, 0 -1px purple;
+}
+
+
+
+/* --------------------------------------- */
+
+
+
+.masked {
+	opacity: 0;
 }
