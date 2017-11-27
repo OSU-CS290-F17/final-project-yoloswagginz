@@ -1,107 +1,106 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<title>FaceIT</title>
+	<head>
+		<meta charset="utf-8">
+		<title>FaceIT</title>
 
-	<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
-	<link rel="stylesheet" href="style.css">
+		<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+		<link rel="stylesheet" href="style.css">
+		<script src="index.js" charset="utf-8"></script>
+	</head>
+	<body>
+		<header>
+			<nav>
+			<h3 id="site-title">FaceIT</h3>
+			<h4 id= "site-slogan">the unfriendly social platform.</h4>
+			<button id="addpostbutton" class ="button header-button">add post</button>
+			<button id="username" class ="button header-button">username</button>
+			
+			</nav>
+		</header>
 
-</head>
-<body>
-	<header>
-		<nav>
-		<h3 id="site-title">FaceIT</h3>
-		<h4 id= "site-slogan">the unfriendly social platform.</h4>
-		<button id="addpostbutton" class ="button header-button">add post</button>
-		<button id="username" class ="button header-button">username</button>
-		
-		</nav>
-	</header>
+		<main id="content">
+			<section id="posts">
 
-	<main id="content">
-		<section id="posts">
-
-			<div class="post">
-				<div class="content-container">
-					<h2>post title</h2>
-					<p>post content</p>
-				</div>
-				<div class="button-container">
-					<button class = "button" >dislike</button>
-					<button class = "button">comment</button>
-				</div>
-				<div class="comment-container">
-					<div class="comment">
-						<p>comment</p>
+				<div class="post" data-dislikes="0">
+					<div class="content-container">
+						<h2>post title</h2>
+						<p>post content</p>
 					</div>
-					<div class="comment">
-						<p>comment #2</p>
+					<div class="button-container">
+						<button class = "button">dislike • <span class="dislikes">0</span></button>
+						<button class = "button">comment</button>
+					</div>
+					<div class="comment-container">
+						<div class="comment">
+							<p>comment</p>
+						</div>
+						<div class="comment">
+							<p>comment #2</p>
+						</div>
 					</div>
 				</div>
+
+				<div class="post" data-dislikes="40">
+					<div class="content-container">
+						<h2>post title #2</h2>
+						<p>post content #2</p>
+					</div>
+					<div class="button-container">
+						<button class = "button">dislike • <span class="dislikes">40</span></button>
+						<button class = "button">comment</button>
+					</div>
+					<div class="comment-container">
+						<div class="comment">
+							<p>comment</p>
+						</div>
+						<div class="comment">
+							<p>comment #2</p>
+						</div>
+						<div class="comment">
+							<p>comment #3</p>
+						</div>
+					</div>
+				</div>
+
+			</section>
+		</main>
+
+		<div id="popup-backdrop" class="masked"></div>
+		<div id="popup-container" class="masked">
+			<div class="popup-header">
+				<h2>Create A New Post</h2>
 			</div>
 
-			<div class="post">
-				<div class="content-container">
-					<h2>post title #2</h2>
-					<p>post content #2</p>
-				</div>
-				<div class="button-container">
-					<button class = "button">dislike</button>
-					<button class = "button">comment</button>
-				</div>
-				<div class="comment-container">
-					<div class="comment">
-						<p>comment</p>
-					</div>
-					<div class="comment">
-						<p>comment #2</p>
-					</div>
-					<div class="comment">
-						<p>comment #3</p>
-					</div>
-				</div>
+			<div class="post-title-container">
+				<h4>Post Title</h4>
+				<label for="post-title"></label>
+				<input type="text" id= "input-post-title">
 			</div>
 
-		</section>
-	</main>
-
-	<div id="popup-backdrop" class="masked"></div>
-	<div id="popup-container" class="masked">
-		<div class="popup-header">
-			<h2>Create A New Post</h2>
+			<div class="post-content-container">
+				<h4>Post Content</h4>
+				<label for="post-content"></label>
+				<input type="text" id= "input-post-content">
+			</div>
+			<button id="createpost" class ="button header-button">create</button>
+			<button id="cancelpost" class ="button header-button">cancel</button>
 		</div>
 
-		<div class="post-title-container">
-			<h4>Post Title</h4>
-			<label for="post-title"></label>
-			<input type="text" id= "input-post-title">
+		<div id="name-container" class="masked">
+			<div class="popup-header">
+				<h2>Give a new name</h2>
+			</div>
+
+			<div class="post-content-container">
+				<h4>Username</h4>
+				<label for="post-content"></label>
+				<input type="text" id= "input-user-content">
+			</div>
+			<button id="createuser" class ="button header-button">create</button>
+			<button id="canceluser" class ="button header-button">cancel</button>
 		</div>
 
-		<div class="post-content-container">
-			<h4>Post Content</h4>
-			<label for="post-content"></label>
-			<input type="text" id= "input-post-content">
-		</div>
-		<button id="createpost" class ="button header-button">create</button>
-		<button id="cancelpost" class ="button header-button">cancel</button>
-	</div>
 
-	<div id="name-container" class="masked">
-		<div class="popup-header">
-			<h2>Give a new name</h2>
-		</div>
-
-		<div class="post-content-container">
-			<h4>Username</h4>
-			<label for="post-content"></label>
-			<input type="text" id= "input-user-content">
-		</div>
-		<button id="createuser" class ="button header-button">create</button>
-		<button id="canceluser" class ="button header-button">cancel</button>
-	</div>
-
-
-</body>
-	<script src="index.js" charset="utf-8"></script>
+	</body>
 </html>
