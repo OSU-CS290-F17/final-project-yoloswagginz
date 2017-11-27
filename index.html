@@ -6,7 +6,6 @@
 
 	<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
 	<link rel="stylesheet" href="style.css">
-	<script src="index.js"></script>
 
 </head>
 <body>
@@ -14,8 +13,9 @@
 		<nav>
 		<h3 id="site-title">FaceIT</h3>
 		<h4 id= "site-slogan">the unfriendly social platform.</h4>
-		<button class ="button header-button">add post</button>
-		<button class ="button header-button">username</button>
+		<button id="addpostbutton" class ="button header-button">add post</button>
+		<button id="username" class ="button header-button">username</button>
+		
 		</nav>
 	</header>
 
@@ -75,17 +75,33 @@
 		<div class="post-title-container">
 			<h4>Post Title</h4>
 			<label for="post-title"></label>
-			<input type="text" id= "input-post-title" value="Post Title">
+			<input type="text" id= "input-post-title">
 		</div>
 
 		<div class="post-content-container">
 			<h4>Post Content</h4>
 			<label for="post-content"></label>
-			<input type="text" id= "input-post-content" value="Post Content">
+			<input type="text" id= "input-post-content">
+		</div>
+		<button id="createpost" class ="button header-button">create</button>
+		<button id="cancelpost" class ="button header-button">cancel</button>
+	</div>
+
+	<div id="name-container" class="masked">
+		<div class="popup-header">
+			<h2>Give a new name</h2>
 		</div>
 
+		<div class="post-content-container">
+			<h4>Username</h4>
+			<label for="post-content"></label>
+			<input type="text" id= "input-user-content">
+		</div>
+		<button id="createuser" class ="button header-button">create</button>
+		<button id="canceluser" class ="button header-button">cancel</button>
 	</div>
 
 
 </body>
+	<script src="index.js" charset="utf-8"></script>
 </html>
