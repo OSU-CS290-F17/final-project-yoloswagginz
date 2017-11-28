@@ -1,13 +1,13 @@
 //this is index.js
-var addpostbutton=document.getElementById('addpostbutton');
-var createpostbutton=document.getElementById('createpost');
-var cancelpostbutton=document.getElementById('cancelpost');
-var usernamebutton=document.getElementById('username');
-var createuserbutton=document.getElementById('createuser');
-var canceluserbutton=document.getElementById('canceluser');
+var addpostbutton=document.getElementById('add-post-button');
+var createpostbutton=document.getElementById('create-post-button');
+var cancelpostbutton=document.getElementById('cancel-post-button');
+var usernamebutton=document.getElementById('change-username-button');
+var createuserbutton=document.getElementById('confirm-username-change');
+var canceluserbutton=document.getElementById('cancel-username-change');
 var content=document.getElementById('content');
-var newpostcontainer=document.getElementById('popup-container');
-var usernamecontainer=document.getElementById('name-container');
+var newpostcontainer=document.getElementById('add-post-container');
+var usernamecontainer=document.getElementById('change-username-container');
 
 function show(show,hide)
 {
@@ -24,8 +24,8 @@ function cancel(show,hide)
 }
 function create()
 {
-    var title=document.getElementById('input-post-title').value;
-    var textcontent=document.getElementById('input-post-content').value;
+    var title=document.getElementById('post-title-input').value;
+    var textcontent=document.getElementById('post-content-input').value;
     if(title && textcontent)
     {
         cancel(content,newpostcontainer);
@@ -45,7 +45,7 @@ function clean()
 }
 function username()
 {
-    var name=document.getElementById('input-user-content').value;
+    var name=document.getElementById('username-input').value;
     if(name)
     {
         document.getElementById('username').textContent=name;
@@ -53,7 +53,7 @@ function username()
     }
     else
     {
-        alert("You must fill the blank!");
+        alert("You must fill in all fields to continue.");
     }
 }
 addpostbutton.addEventListener('click',function(){
