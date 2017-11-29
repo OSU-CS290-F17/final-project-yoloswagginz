@@ -18,10 +18,7 @@ button:hover {
 }
 
 
-
 /* --------------------------------------- */
-
-
 
 header {
 	border: 1px solid #912c21;
@@ -60,10 +57,7 @@ nav {
 }
 
 
-
 /* --------------------------------------- */
-
-
 
 #content {
 	display: flex;
@@ -121,9 +115,7 @@ nav {
 	font-style: italic;
 }
 
-.post-content {
-
-}
+.post-content {}
 
 .comment-container {
 	padding: 15px 0 0 15px;
@@ -150,35 +142,39 @@ nav {
 }
 
 
-
 /* --------------------------------------- */
 
-
-
-#add-post-container {
-
-}
+#add-post-container {}
 
 .masked {
 	opacity: 0;
 }
 
-.popup-header {
+.popup-header {}
 
+.popup-content {}
+
+.popup-buttons-container {}
+
+.popup-button {}
+
+.input-field {}
+
+
+/* --------------------------------------- */
+
+.error-container {
+	font-family: 'Open Sans', sans-serif;
+	text-align: center;
 }
 
-.popup-content {
-
+.error-container h2 {
+	font-size: 128px;
+	margin-top: 50px;
+	margin-bottom: 0;
 }
 
-.popup-buttons-container {
-
-}
-
-.popup-button {
-
-}
-
-.input-field {
-
+.error-container h3 {
+	font-size: 32px;
+	margin: 0;
 }

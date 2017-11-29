@@ -18,11 +18,10 @@ app.get('/', function (req, res) {
 app.use(express.static('public'));
 
 app.get('*', function (req, res) {
-	// res.status(404).render('404Page');
-	// Incorporate a 404 page at a later time
 
-	// Test lines //
-	res.status(404).send("This is a 404 Page.");
+	console.log("== 404 page called.")
+
+	res.status(404).render('404Page');
 });
 
 app.listen(port, function () {
