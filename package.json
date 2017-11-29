@@ -1,31 +1,32 @@
 {
-    "name": "final-project-yoloswagginz",
-    "version": "0.1.0",
-    "description": "CS 290 Final Project Website",
-    "main": "server.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        // "build": "handlebars views/partials/postCardTemplate.handlebars -f public/postCardTemplate.js",
-        "start": "node server.js",
-        "prestart": "npm run build"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/OSU-CS290-F17/final-project-yoloswagginz.git"
-    },
-    "keywords": [
-        "send",
-        "help",
-        "pl0x"
-    ],
-    "author": "Timothy Bui, Hannah Vaughan, Tony Chen, Nick Kiddle",
-    "license": "UNLICENSED",
-    "bugs": {
-        "url": "https://github.com/OSU-CS290-F17/final-project-yoloswagginz/issues"
-    },
-    "homepage": "https://github.com/OSU-CS290-F17/final-project-yoloswagginz#readme",
-    "dependencies": {
-        "express-handlebars": "^3.0.0",
-        "handlebars": "^4.0.11"
-    }
+	"name": "final-project-yoloswagginz",
+	"version": "0.1.0",
+	"description": "CS 290 Final Project Website",
+	"main": "server.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"build": "handlebars views/partials/postCardTemplate.handlebars -f public/postCardTemplate.js",
+		"start": "node server.js",
+		"prestart": "npm run build"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/OSU-CS290-F17/final-project-yoloswagginz.git"
+	},
+	"keywords": [
+		"send",
+		"help",
+		"pl0x"
+	],
+	"author": "Timothy Bui, Hannah Vaughan, Tony Chen, Nick Kiddle",
+	"license": "UNLICENSED",
+	"bugs": {
+		"url": "https://github.com/OSU-CS290-F17/final-project-yoloswagginz/issues"
+	},
+	"homepage": "https://github.com/OSU-CS290-F17/final-project-yoloswagginz#readme",
+	"dependencies": {
+		"express": "^4.16.2",
+		"express-handlebars": "^3.0.0",
+		"handlebars": "^4.0.11"
+	}
 }
