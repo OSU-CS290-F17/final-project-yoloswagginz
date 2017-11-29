@@ -1,8 +1,9 @@
 # \#Y010$W@G1N$
 
-![Whiteboard from first meeting](https://scontent-sea1-1.xx.fbcdn.net/v/t35.0-12/s2048x2048/23601041_358993677895411_1844858243_o.jpg?oh=031780a1318c817282b41899e5883457&oe=5A0D8379 "Whiteboard from first meeting")
+![Whiteboard from first meeting](https://images2.imgbox.com/bf/c3/muYRGnVZ_o.jpg "Whiteboard from first meeting")
 
 ### **== This website will be a Reddit/Facebook hybrid ==**
+### **== DECIDED — FaceIt ==**
 
 # **[Please check this out if you use VS Code](https://code.visualstudio.com/blogs/2017/11/15/live-share?source=techstories.org)**
 
@@ -28,6 +29,8 @@
 * _**November 30, 2017**_ - Get basic JS working
 * _**TBD**_ - Implement Random Usernames
 * _**TBD**_ - Comment System
+* _**TBD**_ - [Templating](https://docs.google.com/document/d/1Q8T6Q2sxPCfuUcKgaCSvONEXaAVBuca_wrd59iWhgQs/edit "Notes from Dr. Hess")
+* _**TBD**_ - Does anyone read this? I know I don't lel
 
 ## Useful Resources:
 

@@ -20,5 +20,9 @@
     "bugs": {
         "url": "https://github.com/OSU-CS290-F17/final-project-yoloswagginz/issues"
     },
-    "homepage": "https://github.com/OSU-CS290-F17/final-project-yoloswagginz#readme"
+    "homepage": "https://github.com/OSU-CS290-F17/final-project-yoloswagginz#readme",
+    "dependencies": {
+        "express-handlebars": "^3.0.0",
+        "handlebars": "^4.0.11"
+    }
 }
