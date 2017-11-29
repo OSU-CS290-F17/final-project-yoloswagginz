@@ -48,7 +48,7 @@ function username()
     var name=document.getElementById('username-input').value;
     if(name)
     {
-        document.getElementById('username').textContent=name;
+        document.getElementById('change-username-button').textContent=name;
         cancel(content,usernamecontainer);
     }
     else

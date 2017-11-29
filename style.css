@@ -163,6 +163,12 @@ nav {
 	opacity: 0;
 }
 
+.center{
+  position:absolute;
+  left:600px;
+  top:300px;
+}
+
 .popup-header {
 
 }
