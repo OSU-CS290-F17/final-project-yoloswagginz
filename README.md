@@ -1,5 +1,7 @@
 # \#Y010$W@G1N$
 
+# **[\*\*Please check out this project page for to-dos and other notes\*\*](https://goo.gl/ocKu3V)**
+
 ![Whiteboard from first meeting](https://images2.imgbox.com/bf/c3/muYRGnVZ_o.jpg "Whiteboard from first meeting")
 
 ### **== This website will be a Reddit/Facebook hybrid ==**
