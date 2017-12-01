@@ -4,6 +4,12 @@ var exhbs = require('express-handlebars');
 var app = express();
 var port = process.env.PORT || 3000;
 
+// MongoDB //
+var MongoClient = require('mongodb').MongoClient;
+var mongoHost = process.env.MONGO_HOST;
+var mongoPort = process.env.MONGO_PORT || 27017;
+
+
 app.engine('handlebars', exhbs({
 	defaultLayout: 'main'
 }));
