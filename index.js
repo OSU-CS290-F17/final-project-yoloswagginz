@@ -1,4 +1,4 @@
-//this is index.js
+// This is index.js
 var addpostbutton = document.getElementById('add-post-button');
 var createpostbutton = document.getElementById('create-post-button');
 var cancelpostbutton = document.getElementById('cancel-post-button');
@@ -20,7 +20,7 @@ function show(show, hide, ele) {
 	show.classList.add('center');
 	hide.classList.add('masked');
 	if (ele) {
-		check = ele.parentElement.parentElement.parentElement; //get the grand gand parent of comment or dislike button
+		check = ele.parentElement.parentElement.parentElement; // Get the great grandparent of comment or dislike button
 	}
 }
 
@@ -31,13 +31,13 @@ function cancel(show, hide) {
 	clean();
 }
 
-function create() //create a new post,need a template
+function create() //Create new post; Needs template
 {
-	var title = document.getElementById('post-title-input').value; //the title of the post
-	var textcontent = document.getElementById('post-content-input').value; //the content of the post
+	var title = document.getElementById('post-title-input').value; // Post Title
+	var textcontent = document.getElementById('post-content-input').value; // Post Content
 	if (title && textcontent) {
 
-		//you need to rend a new post into the page here
+		// Render new post into page here
 		cancel(content, newpostcontainer);
 	} else {
 		alert("You must fill all blanks!");
@@ -61,14 +61,14 @@ function username() {
 	}
 }
 
-function comment() //the second template for user comment
+function comment() // Second User Comment Template
 {
-	var name = document.getElementById('change-username-button').textContent; //username
-	var textcontent = document.getElementById('comment-input').value; //the comment made by user
+	var name = document.getElementById('change-username-button').textContent; // Username
+	var textcontent = document.getElementById('comment-input').value; // The comment made by user
 	if (textcontent) {
-		var allcomment = check.getElementsByTagName('div')[5]; //i have already found the comment container for you
+		var allcomment = check.getElementsByTagName('div')[5]; // I have already found the comment container for you
 		console.log("comment", allcomment);
-		//you need to add a comment to the post here
+		// You need to add a comment to the post here
 		cancel(content, newcommentcontainer);
 	} else {
 		alert("You must fill all blanks!");
