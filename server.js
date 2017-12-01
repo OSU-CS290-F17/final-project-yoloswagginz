@@ -4,6 +4,15 @@ var exhbs = require('express-handlebars');
 var app = express();
 var port = process.env.PORT || 3000;
 
+var commentData = require('./commentData');
+var postsData = require('./postsData');
+
+var muyData = {
+	comments: commentData,
+	posts: postsData,
+	index: i
+};
+
 // MongoDB //
 var MongoClient = require('mongodb').MongoClient;
 var mongoHost = process.env.MONGO_HOST;
