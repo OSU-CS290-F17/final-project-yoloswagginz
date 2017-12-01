@@ -1,10 +1,16 @@
+<<<<<<< HEAD
 // This is index.js
+=======
+//this is index.js
+<<<<<<< HEAD
+>>>>>>> 327009d159ffa364da4353152b37edf233d5b51c
 var addpostbutton = document.getElementById('add-post-button');
 var createpostbutton = document.getElementById('create-post-button');
 var cancelpostbutton = document.getElementById('cancel-post-button');
 var usernamebutton = document.getElementById('change-username-button');
 var createuserbutton = document.getElementById('confirm-username-change');
 var canceluserbutton = document.getElementById('cancel-username-change');
+<<<<<<< HEAD
 var addcommentbutton = document.getElementsByClassName('comment-button');
 var createcommentbutton = document.getElementById('create-comment-button');
 var cancelcommentbutton = document.getElementById('cancel-comment-button');
@@ -82,11 +88,138 @@ function dislike(ele) {
 }
 addpostbutton.addEventListener('click', function () {
 	show(newpostcontainer, content);
+=======
+var content = document.getElementById('content');
+var newpostcontainer = document.getElementById('add-post-container');
+var usernamecontainer = document.getElementById('change-username-container');
+
+function show(show, hide) {
+=======
+var addpostbutton=document.getElementById('add-post-button');
+var createpostbutton=document.getElementById('create-post-button');
+var cancelpostbutton=document.getElementById('cancel-post-button');
+var usernamebutton=document.getElementById('change-username-button');
+var createuserbutton=document.getElementById('confirm-username-change');
+var canceluserbutton=document.getElementById('cancel-username-change');
+var addcommentbutton=document.getElementsByClassName('comment-button');
+var createcommentbutton=document.getElementById('create-comment-button');
+var cancelcommentbutton=document.getElementById('cancel-comment-button');
+var dislikebutton=document.getElementsByClassName('dislike-button');
+var content=document.getElementById('content');
+var newpostcontainer=document.getElementById('add-post-container');
+var usernamecontainer=document.getElementById('change-username-container');
+var newcommentcontainer=document.getElementById('add-comment-container');
+var check;
+
+function show(show,hide,ele)
+{
+>>>>>>> Javascript
+    show.classList.remove('masked');
+    show.classList.add('center');
+    hide.classList.add('masked');
+    if(ele)
+    {
+        check=ele.parentElement.parentElement.parentElement;//get the grand gand parent of comment or dislike button
+    }
+}
+
+function cancel(show, hide) {
+    hide.classList.add('masked');
+    hide.classList.remove('center');
+    show.classList.remove('masked');
+    clean();
+}
+<<<<<<< HEAD
+
+function create() {
+    var title = document.getElementById('post-title-input').value;
+    var textcontent = document.getElementById('post-content-input').value;
+    if (title && textcontent) {
+        cancel(content, newpostcontainer);
+    } else {
+=======
+function create()//create a new post,need a template
+{
+    var title=document.getElementById('post-title-input').value;//the title of the post
+    var textcontent=document.getElementById('post-content-input').value;//the content of the post
+    if(title && textcontent)
+    {
+
+        //you need to rend a new post into the page here
+        cancel(content,newpostcontainer);
+    }
+    else
+    {
+>>>>>>> Javascript
+        alert("You must fill all blanks!");
+    }
+}
+
+function clean() {
+    var all = document.getElementsByTagName('input');
+    for (var i = 0; i < all.length; i++) {
+        all[i].value = "";
+    }
+}
+<<<<<<< HEAD
+
+function username() {
+    var name = document.getElementById('username-input').value;
+    if (name) {
+        document.getElementById('username').textContent = name;
+        cancel(content, usernamecontainer);
+    } else {
+        alert("You must fill in all fields to continue.");
+    }
+}
+addpostbutton.addEventListener('click', function () {
+    show(newpostcontainer, content);
+=======
+function username()
+{
+    var name=document.getElementById('username-input').value;
+    if(name)
+    {
+        document.getElementById('change-username-button').textContent=name;
+        cancel(content,usernamecontainer);
+    }
+    else
+    {
+        alert("You must fill in all fields to continue.");
+    }
+}
+function comment()//the second template for user comment
+{
+    var name=document.getElementById('change-username-button').textContent;//username
+    var textcontent=document.getElementById('comment-input').value;//the comment made by user
+    if(textcontent)
+    {
+        var allcomment=check.getElementsByTagName('div')[5];//i have already found the comment container for you
+        console.log("comment",allcomment);
+        //you need to add a comment to the post here
+        cancel(content,newcommentcontainer);
+    }
+    else
+    {
+        alert("You must fill all blanks!");
+    }
+}
+function dislike(ele)
+{
+    var number=ele.getElementsByTagName('div')[0].textContent;
+    number=parseInt(number)+1;
+    ele.getElementsByTagName('div')[0].textContent=number;
+}
+addpostbutton.addEventListener('click',function(){
+    show(newpostcontainer,content);
+>>>>>>> Javascript
+>>>>>>> 327009d159ffa364da4353152b37edf233d5b51c
 });
 
 createpostbutton.addEventListener('click', create);
 
 cancelpostbutton.addEventListener('click', function () {
+<<<<<<< HEAD
 	cancel(content, newpostcontainer);
 });
 
@@ -114,3 +247,43 @@ for (var i = 0; i < dislikebutton.length; i++) {
 		dislike(this);
 	});
 }
+=======
+    cancel(content, newpostcontainer);
+});
+
+usernamebutton.addEventListener('click', function () {
+    show(usernamecontainer, content);
+});
+
+<<<<<<< HEAD
+createuserbutton.addEventListener('click', username);
+canceluserbutton.addEventListener('click', function () {
+    cancel(content, usernamecontainer);
+});
+=======
+createuserbutton.addEventListener('click',username);
+canceluserbutton.addEventListener('click',function()
+{
+    cancel(content,usernamecontainer);
+});
+
+for(var i=0;i<addcommentbutton.length;i++)
+{
+    addcommentbutton[i].addEventListener('click',function(){
+        show(newcommentcontainer,content,this);
+    });
+}
+createcommentbutton.addEventListener('click',comment);
+cancelcommentbutton.addEventListener('click',function()
+{
+    cancel(content,newcommentcontainer);
+});
+
+for(var i=0;i<dislikebutton.length;i++)
+{
+    dislikebutton[i].addEventListener('click',function(){
+        dislike(this);
+    });
+}
+>>>>>>> Javascript
+>>>>>>> 327009d159ffa364da4353152b37edf233d5b51c
