@@ -20,14 +20,15 @@ button:hover {
 
 /* --------------------------------------- */
 
+
 header {
-	border: 1px solid #912c21;
 	height: 50px;
 	padding: 5px 0;
 	background-color: #c0392b;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	border: 1px solid #912c21;
 }
 
 nav {
@@ -56,6 +57,7 @@ nav {
 
 
 /* --------------------------------------- */
+
 
 #content {
 	display: flex;
@@ -163,7 +165,14 @@ nav {
 
 /* --------------------------------------- */
 
-#add-post-container {}
+
+#change-username-container {
+
+}
+
+#add-comment-container {
+
+}
 
 .masked {
 	opacity: 0;
@@ -171,22 +180,82 @@ nav {
 
 .center {
 	position: absolute;
-	left: 600px;
-	top: 300px;
+	top: 115px;
+	left: 35%;
 }
 
-.popup-header {}
+.popup-header {
+	margin: -20px 0;
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 35px;
+	line-height: 35px;
+	text-shadow: -1px 0 #912c21, 0 1px #912c21, 1px 0 #912c21, 0 -1px #912c21;
+}
 
-.popup-content {}
+.popup-content {
 
-.popup-buttons-container {}
+}
 
-.popup-button {}
+#post-title-input {
+	width: 395px;
+	margin-bottom: 10px;
+}
 
-.input-field {}
+#post-content-input {
+	width: 395px;
+	height: 100px;
+}
+
+#username-input {
+
+}
+
+#comment-input {
+
+}
+
+.popup-buttons-container {
+	margin-top: 10px;
+	display: flex;
+	justify-content: space-between;
+}
 
 
 /* --------------------------------------- */
+
+
+#add-post-container {
+	width: 400px;
+	height: 300px;
+	padding: 0 15px 15px 15px;
+	display: flex;
+	flex-direction: column;
+	background-color: #c0392b;
+	border: 1px solid #912c21;
+	color: #fff;
+}
+
+#create-post-button {
+	width: 195px;
+	height: 30px;
+	background-color: #912c21;
+	border: 1px solid #682018;
+	border-radius: 3px;
+	color: #fff;
+}
+
+#cancel-post-button {
+	width: 195px;
+	height: 30px;
+	background-color: #912c21;
+	border: 1px solid #682018;
+	border-radius: 3px;
+	color: #fff;
+}
+
+
+/* --------------------------------------- */
+
 
 .error-container {
 	font-family: 'Open Sans', sans-serif;
