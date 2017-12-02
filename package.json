@@ -5,7 +5,7 @@
 	"main": "server.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"build": "handlebars views/partials/content_container.handlebars -f public/content_container.js",
+		"build": "handlebars views/partials/content_container.handlebars -f public/content_container.js && handlebars views/partials/comment.handlebars -f public/comment.js",
 		"start": "node server.js",
 		"prestart": "npm run build"
 	},
@@ -27,7 +27,6 @@
 	"dependencies": {
 		"express": "^4.16.2",
 		"express-handlebars": "^3.0.0",
-		"handlebars": "^4.0.11",
-		"mongodb": "^2.2.33"
+		"handlebars": "^4.0.11"
 	}
 }
