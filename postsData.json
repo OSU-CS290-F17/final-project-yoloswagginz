@@ -1,13 +1,15 @@
 [{
 		"postTitle": "Cras Ornare Arcu",
 		"userName": "iSuck",
-		"postContent": "Lorem ipsum dolor sit penissuckadick"
+		"postContent": "Lorem ipsum dolor sit penissuckadick",
+		"index": "1"
 	},
 
 	{
 		"postTitle": "Cras Ornare Arcu",
 		"userName": "wut",
-		"postContent": "Lorem ipsum dolor sit penissuckadick"
+		"postContent": "Lorem ipsum dolor sit penissuckadick",
+		"index": "2"
 	}
 
 ]
