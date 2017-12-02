@@ -77,10 +77,10 @@ nav {
 .post-container {
 	padding: 5px;
 	display: flex;
-	justify-content: space-around;
 }
 
 .button-container {
+	width: 70px;
 	padding-left: 5px;
 	padding-top: 20px;
 	display: flex;
@@ -109,6 +109,7 @@ nav {
 
 .content-container {
 	margin-left: 10px;
+	padding-left: 5px: 
 }
 
 .post-title {
@@ -126,7 +127,9 @@ nav {
 	font-weight: bold;
 }
 
-.post-content {}
+.post-content {
+	padding: 0 5px;
+}
 
 .comment-container {
 	padding: 15px 0 0 15px;
@@ -165,10 +168,6 @@ nav {
 /* --------------------------------------- */
 
 
-#add-comment-container {
-
-}
-
 .masked {
 	opacity: 0;
 }
@@ -188,10 +187,6 @@ nav {
 }
 
 .popup-content {
-
-}
-
-#comment-input {
 
 }
 
@@ -255,8 +250,8 @@ nav {
 
 
 #change-username-container {
-	width: 310px;
-	height: 155px;
+	width: 350px;
+	height: 175px;
 	padding: 0 15px 15px 15px;
 	display: flex;
 	flex-direction: column;
@@ -285,6 +280,44 @@ nav {
 
 #cancel-username-change {
 	width: 148px;
+	height: 30px;
+	background-color: #912c21;
+	border: 1px solid #682018;
+	border-radius: 3px;
+	color: #fff;
+}
+
+
+/* --------------------------------------- */
+
+
+#add-comment-container {
+	width: 350px;
+	height: 166px;
+	padding: 0 15px 15px 15px;
+	display: flex;
+	flex-direction: column;
+	background-color: #c0392b;
+	border: 1px solid #912c21;
+	border-radius: 3px;
+	color: #fff;
+}
+
+#comment-input {
+	width: 345px;
+}
+
+#create-comment-button {
+	width: 170px;
+	height: 30px;
+	background-color: #912c21;
+	border: 1px solid #682018;
+	border-radius: 3px;
+	color: #fff;
+}
+
+#cancel-comment-button {
+	width: 170px;
 	height: 30px;
 	background-color: #912c21;
 	border: 1px solid #682018;
