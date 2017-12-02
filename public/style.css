@@ -40,7 +40,6 @@ nav {
 .header-button {
 	height: 62px;
 	padding: 15px;
-	/*background-color: #444;*/
 	background-color: #c0392b;
 	color: #fff;
 	border: none;
@@ -166,10 +165,6 @@ nav {
 /* --------------------------------------- */
 
 
-#change-username-container {
-
-}
-
 #add-comment-container {
 
 }
@@ -196,20 +191,6 @@ nav {
 
 }
 
-#post-title-input {
-	width: 395px;
-	margin-bottom: 10px;
-}
-
-#post-content-input {
-	width: 395px;
-	height: 100px;
-}
-
-#username-input {
-
-}
-
 #comment-input {
 
 }
@@ -232,7 +213,23 @@ nav {
 	flex-direction: column;
 	background-color: #c0392b;
 	border: 1px solid #912c21;
+	border-radius: 3px;
 	color: #fff;
+}
+
+#post-title-input {
+	width: 395px;
+	margin-bottom: 10px;
+	border: 1px solid #912c21;
+	border-radius: 2px;
+}
+
+#post-content-input {
+	width: 393px;
+	height: 100px;
+	padding: 2px;
+	border: 1px solid #912c21;
+	border-radius: 2px;
 }
 
 #create-post-button {
@@ -246,6 +243,48 @@ nav {
 
 #cancel-post-button {
 	width: 195px;
+	height: 30px;
+	background-color: #912c21;
+	border: 1px solid #682018;
+	border-radius: 3px;
+	color: #fff;
+}
+
+
+/* --------------------------------------- */
+
+
+#change-username-container {
+	width: 310px;
+	height: 155px;
+	padding: 0 15px 15px 15px;
+	display: flex;
+	flex-direction: column;
+	background-color: #c0392b;
+	border: 1px solid #912c21;
+	border-radius: 3px;
+	color: #fff;
+}
+
+#username-input {
+	margin: 10px 0 5px;
+	width: 222px;
+	padding: 2px;
+	border: 1px solid #912c21;
+	border-radius: 2px;
+}
+
+#confirm-username-change {
+	width: 148px;
+	height: 30px;
+	background-color: #912c21;
+	border: 1px solid #682018;
+	border-radius: 3px;
+	color: #fff;
+}
+
+#cancel-username-change {
+	width: 148px;
 	height: 30px;
 	background-color: #912c21;
 	border: 1px solid #682018;
