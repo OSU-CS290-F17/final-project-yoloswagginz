@@ -99,11 +99,7 @@ function create() //create a new post,need a template
 		}
 		var html=Handlebars.templates.content_container(args);
 		postcontainer.insertAdjacentHTML('beforeend',html);
-
-		var html=Handlebars.templates.comment(args);
-		allcomment.insertAdjacentHTML('beforeend',html);
-
-
+		updatebutton();
 		//you need to rend a new post into the page here
 		cancel(content, newpostcontainer);
 	} else {
@@ -149,7 +145,6 @@ function comment() //the second template for user comment
 }
 
 function dislike(ele) {
-	updatebutton();
 	var number = ele.getElementsByTagName('div')[0].textContent;
 	number = parseInt(number) + 1;
 	ele.getElementsByTagName('div')[0].textContent = number;
