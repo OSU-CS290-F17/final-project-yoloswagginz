@@ -35,9 +35,16 @@ function create() //create a new post,need a template
 {
 	var title = document.getElementById('post-title-input').value; //the title of the post
 	var textcontent = document.getElementById('post-content-input').value; //the content of the post
+	var username = document.getElementById('change-username-button').textContent;
 	if (title && textcontent) {
 
 		//you need to rend a new post into the page here
+		var postContext = {NumDislikes: "0", postTitle: title, postContent: textcontent, userName: username};
+		var contentContainerHTML = Handlebars.templates.content_container(postContext);
+		var postContainer = document.getElementById("posts");
+		postContainer.insertAdjacentHTML('beforeend', contentContainerHTML);
+
+
 		cancel(content, newpostcontainer);
 	} else {
 		alert("You must fill all blanks!");
@@ -61,13 +68,19 @@ function username() {
 	}
 }
 
-function comment() //the second template for user comment
+function createComment() //the second template for user comment
 {
 	var name = document.getElementById('change-username-button').textContent; //username
 	var textcontent = document.getElementById('comment-input').value; //the comment made by user
 	if (textcontent) {
 		var allcomment = check.getElementsByTagName('div')[5]; //i have already found the comment container for you
-		console.log("comment", allcomment);
+		var args={
+			commentUsername:name,
+			commentContent:textcontent
+		}
+		var html=Handlebars.templates.comment(args);
+		allcomment.insertAdjacentHTML('beforeend',html);
+
 		//you need to add a comment to the post here
 		cancel(content, newcommentcontainer);
 	} else {
@@ -104,7 +117,7 @@ for (var i = 0; i < addcommentbutton.length; i++) {
 		show(newcommentcontainer, content, this);
 	});
 }
-createcommentbutton.addEventListener('click', comment);
+createcommentbutton.addEventListener('click', createComment);
 cancelcommentbutton.addEventListener('click', function () {
 	cancel(content, newcommentcontainer);
 });

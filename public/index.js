@@ -14,7 +14,59 @@ var newpostcontainer = document.getElementById('add-post-container');
 var usernamecontainer = document.getElementById('change-username-container');
 var newcommentcontainer = document.getElementById('add-comment-container');
 var check;
+var postbackdrop=document.getElementById('add-post-container');
+var commentbackdrop=document.getElementById('add-comment-container');
+var usernamebackdrop=document.getElementById('change-username-container');
+updatebutton();
 
+function updatebutton(){
+	addpostbutton.addEventListener('click', function () {
+		var a=commentbackdrop.classList.contains('masked') && usernamebackdrop.classList.contains('masked');
+		if(a)
+		{
+			show(newpostcontainer, content);
+		}
+	});
+
+	createpostbutton.addEventListener('click', create);
+
+	cancelpostbutton.addEventListener('click', function () {
+		cancel(content, newpostcontainer);
+	});
+
+	usernamebutton.addEventListener('click', function () {
+		var a=commentbackdrop.classList.contains('masked') && postbackdrop.classList.contains('masked');
+		if(a)
+		{
+			show(usernamecontainer, content);
+		}
+	});
+
+	createuserbutton.addEventListener('click', username);
+	canceluserbutton.addEventListener('click', function () {
+		cancel(content, usernamecontainer);
+	});
+
+	for (var i = 0; i < addcommentbutton.length; i++) {
+		addcommentbutton[i].addEventListener('click', function () {
+			var a=postbackdrop.classList.contains('masked') && usernamebackdrop.classList.contains('masked');
+			if(a)
+			{
+				show(newcommentcontainer, content, this);
+			}
+		});
+	}
+	createcommentbutton.addEventListener('click', comment);
+	cancelcommentbutton.addEventListener('click', function () {
+		cancel(content, newcommentcontainer);
+	});
+
+	for (var i = 0; i < dislikebutton.length; i++) {
+		dislikebutton[i].addEventListener('click', function () {
+			dislike(this);
+		});
+	}
+}
 function show(show, hide, ele) {
 	show.classList.remove('masked');
 	show.classList.add('center');
@@ -33,18 +85,26 @@ function cancel(show, hide) {
 
 function create() //create a new post,need a template
 {
+	updatebutton();
 	var title = document.getElementById('post-title-input').value; //the title of the post
 	var textcontent = document.getElementById('post-content-input').value; //the content of the post
-	var username = document.getElementById('change-username-button').textContent;
+	var user=document.getElementById('change-username-button').textContent;
 	if (title && textcontent) {
+		var postcontainer=document.getElementById('posts');
+		var args={
+			postTitle:title,
+			userName:user,
+			postContent:textcontent,
+			NumDislikes: "0"
+		}
+		var html=Handlebars.templates.content_container(args);
+		postcontainer.insertAdjacentHTML('beforeend',html);
+
+		var html=Handlebars.templates.comment(args);
+		allcomment.insertAdjacentHTML('beforeend',html);
+
 
 		//you need to rend a new post into the page here
-		var postContext = {NumDislikes: "0", postTitle: title, postContent: textcontent, userName: username};
-		var contentContainerHTML = Handlebars.templates.content_container(postContext);
-		var postContainer = document.getElementById("posts");
-		postContainer.insertAdjacentHTML('beforeend', contentContainerHTML);
-
-
 		cancel(content, newpostcontainer);
 	} else {
 		alert("You must fill all blanks!");
@@ -68,19 +128,19 @@ function username() {
 	}
 }
 
-function createComment() //the second template for user comment
+function comment() //the second template for user comment
 {
+	updatebutton();
 	var name = document.getElementById('change-username-button').textContent; //username
 	var textcontent = document.getElementById('comment-input').value; //the comment made by user
 	if (textcontent) {
 		var allcomment = check.getElementsByTagName('div')[5]; //i have already found the comment container for you
 		var args={
-			userName:name,
-			comment:textcontent
+			commentUsername:name,
+			commentContent:textcontent
 		}
 		var html=Handlebars.templates.comment(args);
 		allcomment.insertAdjacentHTML('beforeend',html);
-
 		//you need to add a comment to the post here
 		cancel(content, newcommentcontainer);
 	} else {
@@ -89,41 +149,8 @@ function createComment() //the second template for user comment
 }
 
 function dislike(ele) {
+	updatebutton();
 	var number = ele.getElementsByTagName('div')[0].textContent;
 	number = parseInt(number) + 1;
 	ele.getElementsByTagName('div')[0].textContent = number;
-}
-addpostbutton.addEventListener('click', function () {
-	show(newpostcontainer, content);
-});
-
-createpostbutton.addEventListener('click', create);
-
-cancelpostbutton.addEventListener('click', function () {
-	cancel(content, newpostcontainer);
-});
-
-usernamebutton.addEventListener('click', function () {
-	show(usernamecontainer, content);
-});
-
-createuserbutton.addEventListener('click', username);
-canceluserbutton.addEventListener('click', function () {
-	cancel(content, usernamecontainer);
-});
-
-for (var i = 0; i < addcommentbutton.length; i++) {
-	addcommentbutton[i].addEventListener('click', function () {
-		show(newcommentcontainer, content, this);
-	});
-}
-createcommentbutton.addEventListener('click', createComment);
-cancelcommentbutton.addEventListener('click', function () {
-	cancel(content, newcommentcontainer);
-});
-
-for (var i = 0; i < dislikebutton.length; i++) {
-	dislikebutton[i].addEventListener('click', function () {
-		dislike(this);
-	});
 }

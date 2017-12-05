@@ -13,3 +13,9 @@
 			<p class="post-content">{{postContent}}</p>
 		</div>
 	</div>
+	<div class="comment-container">
+		{{#each comments}}
+			{{> comment}}
+		{{/each}}
+	</div>
+</div>

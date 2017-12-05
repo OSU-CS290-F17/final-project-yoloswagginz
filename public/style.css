@@ -105,14 +105,6 @@ nav {
 	border-bottom: none;
 	border-top-left-radius: 3px;
 	border-top-right-radius: 3px;
-	transition: all 0.6s ease-out;
-}
-
-.comment-button:hover {
-	background-color: #595959;
-	border: 1px solid #404040;
-	border-bottom: none;
-	transition: all 0.6s ease-out;
 }
 
 .content-container {
@@ -153,6 +145,7 @@ nav {
 
 .comment {
 	margin-bottom: 15px;
+	padding-bottom: 10px;
 	width: 98%;
 	border-bottom: 1px solid #ccc;
 	display: flex;
@@ -241,13 +234,6 @@ nav {
 	border: 1px solid #682018;
 	border-radius: 3px;
 	color: #fff;
-	transition: all 0.6s ease-out;
-}
-
-#create-post-button:hover {
-	background-color: #682018;
-	border: 1px solid #3e130e;
-	transition: all 0.6s ease-out;
 }
 
 #cancel-post-button {
@@ -257,13 +243,6 @@ nav {
 	border: 1px solid #682018;
 	border-radius: 3px;
 	color: #fff;
-	transition: all 0.6s ease-out;
-}
-
-#cancel-post-button:hover {
-	background-color: #682018;
-	border: 1px solid #3e130e;
-	transition: all 0.6s ease-out;
 }
 
 
@@ -271,8 +250,8 @@ nav {
 
 
 #change-username-container {
-	width: 320px;
-	height: 155px;
+	width: 350px;
+	height: 175px;
 	padding: 0 15px 15px 15px;
 	display: flex;
 	flex-direction: column;
@@ -284,43 +263,30 @@ nav {
 
 #username-input {
 	margin: 10px 0 5px;
-	width: 232px;
+	width: 222px;
 	padding: 2px;
 	border: 1px solid #912c21;
 	border-radius: 2px;
 }
 
 #confirm-username-change {
-	width: 155px;
+	width: 148px;
 	height: 30px;
 	background-color: #912c21;
 	border: 1px solid #682018;
 	border-radius: 3px;
 	color: #fff;
-	transition: all 0.6s ease-out;
-}
-
-#confirm-username-change:hover {
-	background-color: #682018;
-	border: 1px solid #3e130e;
-	transition: all 0.6s ease-out;
 }
 
 #cancel-username-change {
-	width: 155px;
+	width: 148px;
 	height: 30px;
 	background-color: #912c21;
 	border: 1px solid #682018;
 	border-radius: 3px;
 	color: #fff;
-	transition: all 0.6s ease-out;
 }
 
-#cancel-username-change:hover {
-	background-color: #682018;
-	border: 1px solid #3e130e;
-	transition: all 0.6s ease-out;
-}
 
 /* --------------------------------------- */
 
@@ -348,13 +314,6 @@ nav {
 	border: 1px solid #682018;
 	border-radius: 3px;
 	color: #fff;
-	transition: all 0.6s ease-out;
-}
-
-#create-comment-button:hover {
-	background-color: #682018;
-	border: 1px solid #3e130e;
-	transition: all 0.6s ease-out;
 }
 
 #cancel-comment-button {
@@ -364,13 +323,6 @@ nav {
 	border: 1px solid #682018;
 	border-radius: 3px;
 	color: #fff;
-	transition: all 0.6s ease-out;
-}
-
-#cancel-comment-button:hover {
-	background-color: #682018;
-	border: 1px solid #3e130e;
-	transition: all 0.6s ease-out;
 }
 
 
