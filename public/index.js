@@ -74,12 +74,12 @@ function createComment() //the second template for user comment
 	var textcontent = document.getElementById('comment-input').value; //the comment made by user
 	if (textcontent) {
 		var allcomment = check.getElementsByTagName('div')[5]; //i have already found the comment container for you
-		console.log("comment", allcomment);
-
-		var commentContext = {commentUsername: name, commentContent: textContent};
-		var contentContainerHTML = Handlebars.templates.comment(commentContext);
-		var commentContainer = document.getElementsByClassName("comment-container");
-		commentContainer.insertAdjacentHTML('beforeend', contentContainerHTML);
+		var args={
+			userName:name,
+			comment:textcontent
+		}
+		var html=Handlebars.templates.comment(args);
+		allcomment.insertAdjacentHTML('beforeend',html);
 
 		//you need to add a comment to the post here
 		cancel(content, newcommentcontainer);
