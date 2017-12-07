@@ -15,7 +15,7 @@ var port = process.env.PORT || 3000;
 
 // MongoDB Stuff //
 var MongoClient = require('mongodb').MongoClient;
-var mongoURL = 'mongodb://localhost:27017/data'; // For sake of time and other finals, we decided to stick with localhost using local user.
+var mongoURL = 'mongodb://localhost:27017/test'; // For sake of time and other finals, we decided to stick with localhost using local user.
 var mongoConnection = null;
 
 console.log("== Mongo URL:", mongoURL);
@@ -29,12 +29,28 @@ app.use(bodyParser.json());
 
 app.set('view engine', 'handlebars');
 
+// app.get('/', function (req, res) {
+// 	console.log("== Root page called.")
+// 	res.status(200).render('homePage', {
+// 		post: postData
+// 	});
+
+// });
+
 app.get('/', function (req, res) {
 	console.log("== Root page called.")
-	res.status(200).render('homePage', {
-		post: postData
-	});
 
+	var postDataCollection = mongoConnection.collection('postData');
+	postDataCollection.find({}).toArray(function (err, results) {
+		if (err) {
+			res.status(500).send("Error fetching posts from DB");
+		} else {
+			console.log("\n\n== query results:", results);
+			res.status(200).render('homepage', {
+				post: results
+			});
+		}
+	});
 });
 
 

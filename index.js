@@ -31,6 +31,19 @@ function cancel(show, hide) {
 	clean();
 }
 
+// function create() //Create new post; Needs template
+// {
+// 	var title = document.getElementById('post-title-input').value; // Post Title
+// 	var textcontent = document.getElementById('post-content-input').value; // Post Content
+// 	if (title && textcontent) {
+
+// 		// Render new post into page here
+// 		cancel(content, newpostcontainer);
+// 	} else {
+// 		alert("You must fill all blanks!");
+// 	}
+// }
+
 function create() //Create new post; Needs template
 {
 	var title = document.getElementById('post-title-input').value; // Post Title
