@@ -50,6 +50,7 @@ app.get('/', function (req, res) {
 
 app.post('/addPost', function (req, res, res) {
 	if (req.body.postTitle && req.body.userName && req.body.postContent) {
+		var postDataCollection = mongoConnection.collection('postData');
 		console.log("== Processing a new post...");
 		res.status(200).send("New post added!");
 	} else {}
