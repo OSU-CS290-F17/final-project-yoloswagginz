@@ -8,14 +8,14 @@ var path = require('path');
 var express = require('express');
 var exhbs = require('express-handlebars');
 var bodyParser = require('body-parser');
-var postData = require('./data/db/postData');
+var postData = require('postData');
 
 var app = express();
 var port = process.env.PORT || 3000;
 
 // MongoDB Stuff //
 var MongoClient = require('mongodb').MongoClient;
-var mongoURL = 'mongodb://localhost:27017/data'; // For sake of time and other finals, we decided to stick with localhost
+var mongoURL = 'mongodb://localhost:27017/data'; // For sake of time and other finals, we decided to stick with localhost using local user.
 var mongoConnection = null;
 
 console.log("== Mongo URL:", mongoURL);
@@ -24,6 +24,7 @@ console.log("== Mongo URL:", mongoURL);
 app.engine('handlebars', exhbs({
     defaultLayout: 'main'
 }));
+
 app.use(bodyParser.json());
 
 app.set('view engine', 'handlebars');
