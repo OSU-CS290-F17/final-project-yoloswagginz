@@ -49,11 +49,34 @@ app.get('/', function (req, res) {
 // });
 
 app.post('/addPost', function (req, res, res) {
+	console.log("== Processing a new post...");
+
 	if (req.body.postTitle && req.body.userName && req.body.postContent) {
+
 		var postDataCollection = mongoConnection.collection('postData');
-		console.log("== Processing a new post...");
-		res.status(200).send("New post added!");
-	} else {}
+		var newPost = {
+			title: req.body.postTitle,
+			user: req.body.userName,
+			content: req.body.postContent
+		};
+
+		postDataCollection.updateOne({
+				$push: {
+					newPost
+				}
+			},
+			function (err, result) {
+				if (err) {
+					res.status(500).send("You really shouldn't be seeing this. You done goofed.");
+				} else {
+					res.status(200).send("New post added!");
+				}
+			}
+		);
+
+	} else {
+		res.status(400).send("Please fill out all boxes.");
+	}
 });
 
 app.use(express.static('public'));
