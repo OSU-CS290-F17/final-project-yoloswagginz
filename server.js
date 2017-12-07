@@ -15,7 +15,7 @@ var port = process.env.PORT || 3000;
 
 // MongoDB Stuff //
 var MongoClient = require('mongodb').MongoClient;
-var mongoURL = 'mongodb://localhost:27017/data';
+var mongoURL = 'mongodb://localhost:27017/data'; // For sake of time and other finals, we decided to stick with localhost
 var mongoConnection = null;
 
 console.log("== Mongo URL:", mongoURL);
