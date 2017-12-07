@@ -8,7 +8,7 @@ var path = require('path');
 var express = require('express');
 var exhbs = require('express-handlebars');
 var bodyParser = require('body-parser');
-var postData = require('postData');
+var postData = require('./postData');
 
 var app = express();
 var port = process.env.PORT || 3000;
