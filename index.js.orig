@@ -1,17 +1,4 @@
 //this is index.js
-<<<<<<< HEAD
-var addpostbutton = document.getElementById('add-post-button');
-var createpostbutton = document.getElementById('create-post-button');
-var cancelpostbutton = document.getElementById('cancel-post-button');
-var usernamebutton = document.getElementById('change-username-button');
-var createuserbutton = document.getElementById('confirm-username-change');
-var canceluserbutton = document.getElementById('cancel-username-change');
-var content = document.getElementById('content');
-var newpostcontainer = document.getElementById('add-post-container');
-var usernamecontainer = document.getElementById('change-username-container');
-
-function show(show, hide) {
-=======
 var addpostbutton=document.getElementById('add-post-button');
 var createpostbutton=document.getElementById('create-post-button');
 var cancelpostbutton=document.getElementById('cancel-post-button');
@@ -30,7 +17,6 @@ var check;
 
 function show(show,hide,ele)
 {
->>>>>>> handlebars
     show.classList.remove('masked');
     show.classList.add('center');
     hide.classList.add('masked');
