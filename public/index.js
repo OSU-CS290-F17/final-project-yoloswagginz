@@ -19,11 +19,6 @@ var commentbackdrop = document.getElementById('add-comment-container');
 var usernamebackdrop = document.getElementById('change-username-container');
 updatebutton();
 
-// MongoDB Stuff //
-var MongoClient = require('mongodb').MongoClient;
-var mongoURL = 'mongodb://localhost:27017/test'; // For sake of time and other finals, we decided to stick with localhost using local user.
-var mongoConnection = null;
-
 function updatebutton() {
 	addpostbutton.addEventListener('click', function () {
 		var a = commentbackdrop.classList.contains('masked') && usernamebackdrop.classList.contains('masked');
@@ -88,7 +83,11 @@ function cancel(show, hide) {
 
 function create() //create a new post,need a template
 {
+	console.log("== in create");
+
+
 	updatebutton();
+	// var postDataCollection = mongoConnection.collection('postData');
 	var title = document.getElementById('post-title-input').value; //the title of the post
 	var textcontent = document.getElementById('post-content-input').value; //the content of the post
 	var user = document.getElementById('change-username-button').textContent;
@@ -101,9 +100,25 @@ function create() //create a new post,need a template
 			NumDislikes: "0"
 		}
 		var html = Handlebars.templates.content_container(args);
-		// postcontainer.insertAdjacentHTML('beforeend',html);
-
-
+		postcontainer.insertAdjacentHTML('beforeend', html);
+		// The following code should be able to push to the database if invoked in "server.js" //
+		// postDataCollection.updateOne({
+		// 		$push: {
+		// 			args
+		// 		}
+		// 	},
+		// 	function (err, result) {
+		// 		if (err) {
+		// 			console.log("== err in create");
+		// 			// res.status(500).send("Rip you should not have seen this");
+		// 			res.status(500);
+		// 		} else {
+		// 			console.log("== success in create");
+		// 			// res.status(200).send("Success");
+		// 			res.status(200);
+		// 		}
+		// 	}
+		// )
 
 		updatebutton();
 		//you need to rend a new post into the page here

@@ -111,5 +111,6 @@ MongoClient.connect(mongoURL, function (err, connection) {
 	mongoConnection = connection;
 	app.listen(port, function () {
 		console.log("== Server is listening on port: ", port);
+		// console.log("== Server connection: ", connection);
 	});
 });
