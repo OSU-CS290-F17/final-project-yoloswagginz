@@ -101,6 +101,7 @@ function create() //create a new post,need a template
 		}
 		var html = Handlebars.templates.content_container(args);
 		postcontainer.insertAdjacentHTML('beforeend', html);
+
 		// The following code should be able to push to the database if invoked in "server.js" //
 		// postDataCollection.updateOne({
 		// 		$push: {
