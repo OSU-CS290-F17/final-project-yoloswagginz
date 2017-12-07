@@ -6,8 +6,9 @@
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"build": "handlebars views/partials/content_container.handlebars -f public/content_container.js && handlebars views/partials/comment.handlebars -f public/comment.js",
-		"start": "node server.js",
-		"prestart": "npm run build"
+		"start": "mongod --dbpath=./data/db/ & node server.js",
+		"prestart": "npm run build",
+		"stop": "mongo admin --eval 'db.shutdownServer()' > /dev/null"
 	},
 	"repository": {
 		"type": "git",
