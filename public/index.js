@@ -87,7 +87,6 @@ function create() //create a new post,need a template
 
 
 	updatebutton();
-	// var postDataCollection = mongoConnection.collection('postData');
 	var title = document.getElementById('post-title-input').value; //the title of the post
 	var textcontent = document.getElementById('post-content-input').value; //the content of the post
 	var user = document.getElementById('change-username-button').textContent;
@@ -103,9 +102,12 @@ function create() //create a new post,need a template
 		postcontainer.insertAdjacentHTML('beforeend', html);
 
 		// The following code should be able to push to the database if invoked in "server.js" //
+
+		// var postDataCollection = mongoConnection.collection('postData'); // Creates object "postDataCollection" that links to collection "postData" in the "test" db
+
 		// postDataCollection.updateOne({
 		// 		$push: {
-		// 			args
+		// 			args // Adds 'args' to the db 
 		// 		}
 		// 	},
 		// 	function (err, result) {

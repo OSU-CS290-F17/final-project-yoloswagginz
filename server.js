@@ -18,6 +18,15 @@ var MongoClient = require('mongodb').MongoClient;
 var mongoURL = 'mongodb://localhost:27017/test'; // For sake of time and other finals, we decided to stick with localhost using local user.
 var mongoConnection = null;
 
+// Basics for Mongo //
+// DB: test
+// Container: postData
+// To quit after running "npm start," use "ctrl + c" then use "npm stop" to shutdown mongo
+// to see contents of container, start mongo server by running "mongod --dbpath=./data/db/" then using "db.postDate.find()" (Searches and displays everything [no query])
+// all data is inside ./data
+// I added some useful resources to the readme.md down in the to do list section
+// its 6 am and i need sleep... i'll try to be up by noon
+
 console.log("== Mongo URL:", mongoURL);
 
 
@@ -69,7 +78,12 @@ app.post('/addPost', function (req, res, res) {
 	// This could also apply for mongo //
 	if (req.body.postTitle && req.body.userName && req.body.postContent) {
 
+		// Tells mongo what collection to use
+		// Please note that the db is "test" and the collection is "postData"
 		var postDataCollection = mongoConnection.collection('postData');
+
+
+		// Creates the newPost object
 		var newPost = {
 			title: req.body.postTitle,
 			user: req.body.userName,
@@ -77,6 +91,7 @@ app.post('/addPost', function (req, res, res) {
 		};
 
 		postDataCollection.updateOne({
+				// This pushes object newPost to the db
 				$push: {
 					newPost
 				}
