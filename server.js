@@ -66,7 +66,7 @@ app.get('/', function (req, res) {
 
 app.post('/addPost', function (req, res, res) {
 	console.log("== Processing a new post...");
-
+	// This could also apply for mongo //
 	if (req.body.postTitle && req.body.userName && req.body.postContent) {
 
 		var postDataCollection = mongoConnection.collection('postData');
