@@ -22,7 +22,7 @@ var mongoConnection = null;
 // DB: test
 // Container: postData
 // To quit after running "npm start," use "ctrl + c" then use "npm stop" to shutdown mongo
-// to see contents of container, start mongo server by running "mongod --dbpath=./data/db/" then using "db.postDate.find()" (Searches and displays everything [no query])
+// to see contents of container, start mongo server by running "mongod --dbpath=./data/db/" then using another shell window run "mongo" then "db.postDate.find()" (Searches and displays everything [no query])
 // all data is inside ./data
 // I added some useful resources to the readme.md down in the to do list section
 // its 6 am and i need sleep... i'll try to be up by noon
