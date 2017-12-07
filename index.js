@@ -15,6 +15,11 @@ var usernamecontainer = document.getElementById('change-username-container');
 var newcommentcontainer = document.getElementById('add-comment-container');
 var check;
 
+// MongoDB Stuff //
+var MongoClient = require('mongodb').MongoClient;
+var mongoURL = 'mongodb://localhost:27017/test'; // For sake of time and other finals, we decided to stick with localhost using local user.
+var mongoConnection = null;
+
 function show(show, hide, ele) {
 	show.classList.remove('masked');
 	show.classList.add('center');

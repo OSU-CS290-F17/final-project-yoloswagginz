@@ -14,16 +14,20 @@ var newpostcontainer = document.getElementById('add-post-container');
 var usernamecontainer = document.getElementById('change-username-container');
 var newcommentcontainer = document.getElementById('add-comment-container');
 var check;
-var postbackdrop=document.getElementById('add-post-container');
-var commentbackdrop=document.getElementById('add-comment-container');
-var usernamebackdrop=document.getElementById('change-username-container');
+var postbackdrop = document.getElementById('add-post-container');
+var commentbackdrop = document.getElementById('add-comment-container');
+var usernamebackdrop = document.getElementById('change-username-container');
 updatebutton();
 
-function updatebutton(){
+// MongoDB Stuff //
+var MongoClient = require('mongodb').MongoClient;
+var mongoURL = 'mongodb://localhost:27017/test'; // For sake of time and other finals, we decided to stick with localhost using local user.
+var mongoConnection = null;
+
+function updatebutton() {
 	addpostbutton.addEventListener('click', function () {
-		var a=commentbackdrop.classList.contains('masked') && usernamebackdrop.classList.contains('masked');
-		if(a)
-		{
+		var a = commentbackdrop.classList.contains('masked') && usernamebackdrop.classList.contains('masked');
+		if (a) {
 			show(newpostcontainer, content);
 		}
 	});
@@ -35,9 +39,8 @@ function updatebutton(){
 	});
 
 	usernamebutton.addEventListener('click', function () {
-		var a=commentbackdrop.classList.contains('masked') && postbackdrop.classList.contains('masked');
-		if(a)
-		{
+		var a = commentbackdrop.classList.contains('masked') && postbackdrop.classList.contains('masked');
+		if (a) {
 			show(usernamecontainer, content);
 		}
 	});
@@ -49,9 +52,8 @@ function updatebutton(){
 
 	for (var i = 0; i < addcommentbutton.length; i++) {
 		addcommentbutton[i].addEventListener('click', function () {
-			var a=postbackdrop.classList.contains('masked') && usernamebackdrop.classList.contains('masked');
-			if(a)
-			{
+			var a = postbackdrop.classList.contains('masked') && usernamebackdrop.classList.contains('masked');
+			if (a) {
 				show(newcommentcontainer, content, this);
 			}
 		});
@@ -67,6 +69,7 @@ function updatebutton(){
 		});
 	}
 }
+
 function show(show, hide, ele) {
 	show.classList.remove('masked');
 	show.classList.add('center');
@@ -88,17 +91,20 @@ function create() //create a new post,need a template
 	updatebutton();
 	var title = document.getElementById('post-title-input').value; //the title of the post
 	var textcontent = document.getElementById('post-content-input').value; //the content of the post
-	var user=document.getElementById('change-username-button').textContent;
+	var user = document.getElementById('change-username-button').textContent;
 	if (title && textcontent) {
-		var postcontainer=document.getElementById('posts');
-		var args={
-			postTitle:title,
-			userName:user,
-			postContent:textcontent,
+		var postcontainer = document.getElementById('posts');
+		var args = {
+			postTitle: title,
+			userName: user,
+			postContent: textcontent,
 			NumDislikes: "0"
 		}
-		var html=Handlebars.templates.content_container(args);
-		postcontainer.insertAdjacentHTML('beforeend',html);
+		var html = Handlebars.templates.content_container(args);
+		// postcontainer.insertAdjacentHTML('beforeend',html);
+
+
+
 		updatebutton();
 		//you need to rend a new post into the page here
 		cancel(content, newpostcontainer);
@@ -131,12 +137,12 @@ function comment() //the second template for user comment
 	var textcontent = document.getElementById('comment-input').value; //the comment made by user
 	if (textcontent) {
 		var allcomment = check.getElementsByTagName('div')[5]; //i have already found the comment container for you
-		var args={
-			commentUsername:name,
-			commentContent:textcontent
+		var args = {
+			commentUsername: name,
+			commentContent: textcontent
 		}
-		var html=Handlebars.templates.comment(args);
-		allcomment.insertAdjacentHTML('beforeend',html);
+		var html = Handlebars.templates.comment(args);
+		allcomment.insertAdjacentHTML('beforeend', html);
 		//you need to add a comment to the post here
 		cancel(content, newcommentcontainer);
 	} else {
