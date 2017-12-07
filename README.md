@@ -4,6 +4,7 @@
 
 ![Whiteboard from first meeting](https://images2.imgbox.com/bf/c3/muYRGnVZ_o.jpg "Whiteboard from first meeting")
 
+### **== This website will be a Reddit/Facebook hybrid ==**
 ### **== DECIDED — FaceIt ==**
 
 # **[Please check this out if you use VS Code](https://code.visualstudio.com/blogs/2017/11/15/live-share?source=techstories.org)**

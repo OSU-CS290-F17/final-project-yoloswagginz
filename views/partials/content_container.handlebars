@@ -1,9 +1,9 @@
-<div class="post" data-dislikes="0">
+<div class="post" data-dislikes="{{NumDislikes}}">
 	<div class="post-container">
 		<div class="button-container">
 			<button class="dislike-button">
-				<div>0</div>
-				<div>🡇</div>
+				<div>{{NumDislikes}}</div>
+				<div>⬇</div>
 			</button>
 			<button class="comment-button">comment</button>
 		</div>
@@ -14,5 +14,8 @@
 		</div>
 	</div>
 	<div class="comment-container">
+		{{#each comments}}
+			{{> comment}}
+		{{/each}}
 	</div>
 </div>

@@ -18,6 +18,7 @@ var postbackdrop=document.getElementById('add-post-container');
 var commentbackdrop=document.getElementById('add-comment-container');
 var usernamebackdrop=document.getElementById('change-username-container');
 updatebutton();
+
 function updatebutton(){
 	addpostbutton.addEventListener('click', function () {
 		var a=commentbackdrop.classList.contains('masked') && usernamebackdrop.classList.contains('masked');
@@ -84,19 +85,32 @@ function cancel(show, hide) {
 
 function create() //create a new post,need a template
 {
+	updatebutton();
 	var title = document.getElementById('post-title-input').value; //the title of the post
 	var textcontent = document.getElementById('post-content-input').value; //the content of the post
 	var user=document.getElementById('change-username-button').textContent;
 	if (title && textcontent) {
-		var postcontainer=document.getElementById('posts');
+		var postRequest = new XMLHttpRequest();
+		var postURL="/addPost";
+		postRequest.open('POST',postURL);
 		var args={
 			postTitle:title,
 			userName:user,
-			postContent:textcontent
+			postContent:textcontent,
+			NumDislikes: "0"
 		}
-		var html=Handlebars.templates.content_container(args);
-		postcontainer.insertAdjacentHTML('beforeend',html);
-		updatebutton();
+		var requestBody=JSON.stringify(args);
+		postRequest.setRequestHeader('Content-Type','application/json');
+		postRequest.addEventListener('load', function (event) {
+			if (event.target.status !== 200) {
+			  alert("Error storing photo in database:\n\n\n" + event.target.response);
+			} else {
+				var postcontainer=document.getElementById('posts');
+				var html=Handlebars.templates.content_container(args);
+				postcontainer.insertAdjacentHTML('beforeend',html);
+			}
+		});
+		postRequest.send(requestBody);
 		//you need to rend a new post into the page here
 		cancel(content, newpostcontainer);
 	} else {
@@ -127,12 +141,22 @@ function comment() //the second template for user comment
 	var textcontent = document.getElementById('comment-input').value; //the comment made by user
 	if (textcontent) {
 		var allcomment = check.getElementsByTagName('div')[5]; //i have already found the comment container for you
+		var parent=allcomment.parentElement;
+		var text=parent.getElementsByClassName('post-title')[0].textContent;
 		var args={
-			userName:name,
-			comment:textcontent
+			commentUsername:name,
+			commentContent:textcontent,
+			text:text
 		}
 		var html=Handlebars.templates.comment(args);
 		allcomment.insertAdjacentHTML('beforeend',html);
+		
+		var postRequest = new XMLHttpRequest();
+		var postURL="/addcomment";
+		postRequest.open('POST',postURL);
+		var requestBody=JSON.stringify(args);
+		postRequest.setRequestHeader('Content-Type','application/json');
+		postRequest.send(requestBody);
 		//you need to add a comment to the post here
 		cancel(content, newcommentcontainer);
 	} else {

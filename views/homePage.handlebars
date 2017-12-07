@@ -1,1 +1,12 @@
-{{> header}} {{> mainContent}} {{> popUpDialog}}
+{{> header}}
+
+<main id="content">
+	<section id="posts">
+
+      {{#each post}}
+         {{> content_container}}
+      {{/each}}
+
+   </secion>
+</main>
+{{> popUpDialog}}
