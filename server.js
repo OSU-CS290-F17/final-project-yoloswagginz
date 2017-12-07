@@ -39,13 +39,20 @@ app.get('/', function (req, res) {
 
 
 
+// app.post('/addPost', function (req, res, res) {
+// 	if (req.body.postTitle && req.body.userName && req.body.postContent) {
+// 		console.log("Processing a new post...");
+// 		res.status(200).send("New post added!");
+// 	} else {
+// 		res.status(400).send("Please make sure all fields are completed and try again.");
+// 	}
+// });
+
 app.post('/addPost', function (req, res, res) {
 	if (req.body.postTitle && req.body.userName && req.body.postContent) {
-		console.log("Processing a new post...");
+		console.log("== Processing a new post...");
 		res.status(200).send("New post added!");
-	} else {
-		res.status(400).send("Please make sure all fields are completed and try again.");
-	}
+	} else {}
 });
 
 app.use(express.static('public'));

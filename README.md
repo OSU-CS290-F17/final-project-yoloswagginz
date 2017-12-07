@@ -32,6 +32,7 @@
 * _**TBD**_ - Comment System
 * _**TBD**_ - [Templating](https://docs.google.com/document/d/1Q8T6Q2sxPCfuUcKgaCSvONEXaAVBuca_wrd59iWhgQs/edit "Notes from Dr. Hess")
 * _**TBD**_ - Does anyone read this? I know I don't lel
+* _**TBD**_ - [Super helpful for MongoDB. Leaving for future reference on converting json files to db.](http://cheng.logdown.com/posts/2015/03/03/install-mongodb-and-import-json-file "How to convert json to db")
 
 ## Useful Resources:
 
