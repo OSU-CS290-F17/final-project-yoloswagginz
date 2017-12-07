@@ -18,50 +18,6 @@ var postbackdrop=document.getElementById('add-post-container');
 var commentbackdrop=document.getElementById('add-comment-container');
 var usernamebackdrop=document.getElementById('change-username-container');
 updatebutton();
-<<<<<<< HEAD
-function updatebutton(){
-	addpostbutton.addEventListener('click', function () {
-		var a=commentbackdrop.classList.contains('masked') && usernamebackdrop.classList.contains('masked');
-		if(a)
-		{
-			show(newpostcontainer, content);
-		}
-	});
-
-	createpostbutton.addEventListener('click', create);
-
-	cancelpostbutton.addEventListener('click', function () {
-		cancel(content, newpostcontainer);
-	});
-
-	usernamebutton.addEventListener('click', function () {
-		var a=commentbackdrop.classList.contains('masked') && postbackdrop.classList.contains('masked');
-		if(a)
-		{
-			show(usernamecontainer, content);
-		}
-	});
-
-	createuserbutton.addEventListener('click', username);
-	canceluserbutton.addEventListener('click', function () {
-		cancel(content, usernamecontainer);
-	});
-
-	for (var i = 0; i < addcommentbutton.length; i++) {
-		addcommentbutton[i].addEventListener('click', function () {
-			var a=postbackdrop.classList.contains('masked') && usernamebackdrop.classList.contains('masked');
-			if(a)
-			{
-				show(newcommentcontainer, content, this);
-			}
-		});
-	}
-	createcommentbutton.addEventListener('click', comment);
-	cancelcommentbutton.addEventListener('click', function () {
-		cancel(content, newcommentcontainer);
-	});
-
-=======
 
 function updatebutton(){
 	addpostbutton.addEventListener('click', function () {
@@ -105,7 +61,6 @@ function updatebutton(){
 		cancel(content, newcommentcontainer);
 	});
 
->>>>>>> alpha
 	for (var i = 0; i < dislikebutton.length; i++) {
 		dislikebutton[i].addEventListener('click', function () {
 			dislike(this);
@@ -139,12 +94,8 @@ function create() //create a new post,need a template
 		var args={
 			postTitle:title,
 			userName:user,
-<<<<<<< HEAD
-			postContent:textcontent
-=======
 			postContent:textcontent,
 			NumDislikes: "0"
->>>>>>> alpha
 		}
 		var html=Handlebars.templates.content_container(args);
 		postcontainer.insertAdjacentHTML('beforeend',html);
@@ -181,13 +132,8 @@ function comment() //the second template for user comment
 	if (textcontent) {
 		var allcomment = check.getElementsByTagName('div')[5]; //i have already found the comment container for you
 		var args={
-<<<<<<< HEAD
-			userName:name,
-			comment:textcontent
-=======
 			commentUsername:name,
 			commentContent:textcontent
->>>>>>> alpha
 		}
 		var html=Handlebars.templates.comment(args);
 		allcomment.insertAdjacentHTML('beforeend',html);
@@ -202,8 +148,4 @@ function dislike(ele) {
 	var number = ele.getElementsByTagName('div')[0].textContent;
 	number = parseInt(number) + 1;
 	ele.getElementsByTagName('div')[0].textContent = number;
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> alpha
