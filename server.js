@@ -40,8 +40,6 @@ app.get('/', function (req, res) {
 	});
 });
 
-
-
 app.post('/addPost', function (req, res, next) {
 	if (req.body) {
 		var postdatacollection = mongoConnection.collection('postData');
